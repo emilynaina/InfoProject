@@ -20,7 +20,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px; /* Adjust padding as needed */
+    padding: 5px 100px; /* Adjust padding as needed */
     
     display: flex;
     justify-content: space-between;
@@ -88,8 +88,8 @@ header {
 
 .wrapper {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 400px; /* Set a fixed width for the wrapper */
+    height: 440px;
     background: transparent; /* Make the wrapper transparent to see the background image */
     border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border for better visibility */
     border-radius: 20px;
@@ -98,14 +98,47 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; 
-    overflow: hidden;        
+    overflow: hidden;   
+    transform: scale(0); 
+    transition: transform .5s ease,height 0.2s ease; /* Smooth transition for height change */
 }
+
+.wrapper.active-popup{
+    transform: scale(1); 
+}
+.wrapper.active {
+    height:520px;
+}
+
 
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
 }
 
+.wrapper .form-box.login {
+  transition: transform 0.18s ease; /* Smooth transition for the login form */
+    transform: translateX(0); /* Move the login form into view */
+
+}
+
+.wrapper.active .form-box.login {
+    transition: none; /* Disable transition when the wrapper is active */
+    transform: translateX(-400px); /* Move the login form into view */
+}
+
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px); /* Move the register form out of view */
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease; /* Smooth transition for the login form */
+      transform: translateX(0); /* Move the login form into view */
+  
+  }
 .wrapper .icon-close{
     position: absolute;
     top: 0;
@@ -120,7 +153,7 @@ header {
     align-items: center;
     border-bottom-left-radius: 20px;
     cursor: pointer;
-    
+
     z-index: 1; /* Ensure the close button is above the form */
 }
 
@@ -209,7 +242,7 @@ header {
     outline:none;
     border-radius: 6px;
     cursor: pointer;
-    font-soze: 1em;
+    font-size: 1em;
     color: #022243;
     font-weight: 500;
 
