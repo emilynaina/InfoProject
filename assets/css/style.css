@@ -1,96 +1,51 @@
+/* -----------------------------------
+   Import Fonts & Root Variables
+----------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #022243;
-    --accent-color: #ff4757;
-    --text-light: #F4F4F4;
-    --background-blur: blur(20px);
+  --primary-color: #022243;
+  --accent-color: #ff4757;
+  --text-light: #F4F4F4;
+  --background-blur: blur(20px);
 }
 
-/* Base Styles */
+/* -----------------------------------
+   Reset & Base Styles
+----------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    transition: color 0.3s, background 0.3s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s, background 0.3s;
 }
- 
+
 body {
- 
+  background: linear-gradient(to right, #072152, #516a94);
+  background-size: cover;
+  background-position: center;
+  padding-left: 15px;
   padding-bottom: 20px;
-     display:flex;
-    padding-left: 15px;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to right, #072152, #516a94);
-    background-size: cover;
-    background-position:center ;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+  line-height: 1.7;
 }
 
-.welcome-message{
-    color: #ffffff;
+/* -----------------------------------
+   Typography
+----------------------------------- */
+.welcome-message,
+.tip {
+  color: white;
 }
 
-/* .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: right;
-    height: 100%;
-    padding-right: 30px;
-  } */
-  
-  .hero-image {
-    position: fixed;
-    bottom: 0;
-    right: 20px;             /* Distance from the right edge */
-    max-height: 90vh;        /* Fit within screen height */
-    width: auto;
-    z-index: 10;             /* Ensure it's above background elements */
-    pointer-events: none;    /* Let clicks pass through, optional */
-  }
-  
-  .hero-image img {
-    max-height: 90vh;      /* Keeps the image within the screen */
-    width: auto;
-    object-fit: contain;
-    display: block;
-  }
-  
-.hero-text {
-    max-width: 500px;
-    color: #ffffff;
-    padding-left: 10px;
-    margin-left: 0;
-  }
-  
-  .hero-text h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-  
-  .hero-text h1 span {
-    color: #ffffff;
-    font-weight: 700;
-  }
-  
-  .hero-text h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-
-  .hero-text p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    color: #dddddd;
-  }
-
-/* Header & Navigation */
+/* -----------------------------------
+   Header & Navigation
+----------------------------------- */
 header {
   position: fixed;
   top: 0;
@@ -103,113 +58,378 @@ header {
   z-index: 99;
   background: rgb(0, 0, 0);
   color: white;
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
 }
 
 .logo {
-    font-size: 2rem;
-    color: var(--text-light);
-    user-select: none;
+  font-size: 2rem;
+  color: var(--text-light);
+  user-select: none;
 }
 
 .navigation {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 .navigation a {
-    color: var(--text-light);
-    text-decoration: none;
-    position: relative;
-    padding: 0.5rem 0;
+  color: var(--text-light);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
 }
 
 .navigation a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-color);
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
 }
 
 .navigation a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
+/* -----------------------------------
+   Hero Section
+----------------------------------- */
+.hero-image {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  max-height: 90vh;
+  width: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-image img {
+  max-height: 90vh;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-text {
+  max-width: 500px;
+  color: #ffffff;
+  padding-left: 10px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-text h1 span {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero-text h2,
+.hero-text p {
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-text h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #dddddd;
+}
+
+/* -----------------------------------
+   Popup / Modal Wrapper
+----------------------------------- */
 .wrapper {
-    position: fixed; /* Changed from relative to fixed */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0); /* Initial centered position */
-    width: 400px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    backdrop-filter: var(--background-blur);
-    padding: 2rem;
-    z-index: 1000; /* Ensure it's above other elements */
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: var(--background-blur);
+  padding: 2rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
 .wrapper.active-popup {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Add overlay for better visibility */
+.icon-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5em;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
 body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
 body.auth-active::after {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Form Element Adjustments */
+/* -----------------------------------
+   Forms
+----------------------------------- */
 .form-box {
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 }
 
 .input-box {
-    margin: 25px 0;
-    position: relative;
+  margin: 25px 0;
+  position: relative;
 }
 
 .password-guidelines {
-    display: block;
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 5px;
-    white-space: pre-line;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+  white-space: pre-line;
 }
 
 .btn {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.tip{
+/* -----------------------------------
+   Job Cards & Flip
+----------------------------------- */
+.job-title {
+  font-size: 1rem;
+  white-space: nowrap;      /* prevents line breaks */
+  overflow: hidden;         /* hides anything that overflows the container */
+  text-overflow: ellipsis;  /* adds "..." if text overflows */
+}
+.job-card,
+.job-card-front,
+.job-card-back {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-card {
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.job-card h3 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.job-meta span {
+  background: rgba(2, 34, 67, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.job-card-flip {
+  width: 300px;
+  height: 220px;
+  perspective: 1000px;
+  margin: 1rem;
+}
+
+.job-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.job-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.job-card-front,
+.job-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.job-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.detail-btn,
+.back-btn,
+.favorite-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.favorite-btn.favorited {
+  background: var(--accent-color);
+}
+
+/* -----------------------------------
+   Dashboard & Filters
+----------------------------------- */
+.dashboard-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 6rem auto 2rem;
+}
+
+.dashboard-header {
   color: white;
 }
-/*Loading screen dots*/
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.filters input[type="text"],
+.filters select {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 200px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #17498f;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+.view-toggle button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-toggle .view-active,
+.view-toggle button:hover {
+  background-color: #17498f;
+  color: white;
+}
+
+/* -----------------------------------
+   Header Controls
+----------------------------------- */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--text-light);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  backdrop-filter: var(--background-blur);
+  transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* -----------------------------------
+   Error & Loading
+----------------------------------- */
+.error {
+  color: var(--accent-color);
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
 .loading {
   font-size: 32px;
   font-weight: 600;
@@ -232,317 +452,119 @@ body.auth-active::after {
   100% { content: '...'; }
 }
 
-/* Close Icon Positioning */
-.icon-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 1.5em;
-    color: var(--text-light);
-    cursor: pointer;
-}
-
-/* Dashboard Styles */
-.dashboard-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 6rem auto 2rem;
-}
-
-.dashboard-header{
-    color: white;
-}
-.jobs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0;
-}
-
-.job-card {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.filters {
-    display: flex;
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-/* Interactive Elements */
-.favorite-btn {
-    background: var(--primary-color);
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.favorite-btn.favorited {
-    background: var(--accent-color);
-}
-
-/* Utilities */
-.error {
-    color: var(--accent-color);
-    padding: 1rem;
-    text-align: center;
-    border: 2px solid var(--accent-color);
-    border-radius: 5px;
-    margin: 1rem 0;
-}
-/* Header Controls */
-.header-controls {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.header-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.header-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid var(--text-light);
-    color: var(--text-light);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    backdrop-filter: var(--background-blur);
-    transition: all 0.3s ease;
-}
-
-.header-btn:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-/* Gallery Layout */
-.jobs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.job-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.job-card:hover {
-    transform: translateY(-5px) scale(1.02);
-}
-
-.job-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-/* Job Metadata */
-.job-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.job-meta span {
-    background: rgba(2, 34, 67, 0.1);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
+/* -----------------------------------
+   Responsive Design
+----------------------------------- */
 @media (max-width: 768px) {
-    .navigation {
-        gap: 1rem;
-    }
+  .navigation {
+    gap: 1rem;
+  }
 
-    .wrapper {
-        width: 90%;
-        padding: 1.5rem;
-    }
+  .wrapper {
+    width: 90%;
+    padding: 1.5rem;
+  }
 
-    .dashboard-container {
-        margin-top: 5rem;
-    }
+  .dashboard-container {
+    margin-top: 5rem;
+  }
 
-    .filters {
-        flex-direction: column;
-    }
+  .filters {
+    flex-direction: column;
+  }
 }
-
-
-/* About Us Section */
-.section {
-    padding: 80px 20px;
-  }
-  
-  .container {
-   
-    margin: auto;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  }
-  
-  .title h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #1f2937;
-  }
-  
-  .intro {
-    font-size: 1.2rem;
-    text-align: center;
-    color: #4b5563;
-    margin-bottom: 30px;
-  }
-  
-  .content h2 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-    color: #111827;
-  }
-  
-  .content p {
-    font-size: 1.05rem;
-    margin-top: 10px;
-    color: #374151;
-  }
-
-  
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-  
-    .navigation {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-  
-    .btnLogin-popup {
-      margin-top: 10px;
-    }
-  
-    .container {
-      padding: 20px;
-    }
-  }
-
-  /* About Section */
-  .about-section {
-   padding-top: 100px;
-   padding-bottom: 100px;
-    background-color: #fff;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto; 
-  }
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 20px;
-}
-
-.title h1 {
-  font-size: 2.5rem;
-  color: #17498f;
-  margin-bottom: 20px;
+/* About */
+.hero {
+ 
+  color: #ffffff;
+  padding: 100px 0 40px;
+  position: relative;
   text-align: center;
 }
 
-.intro {
-  font-size: 1.1rem;
-  color: #555;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.content h2 {
-  font-size: 1.5rem;
-  color: #17498f;
-  margin-top: 30px;
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-.content p {
-  font-size: 1rem;
-  color: #444;
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.9;
+}
+/* ------------------ Hero Section ------------------ */
+.about-hero-section {
+  background: linear-gradient(135deg, #17498f, #1e3a8a);
+  padding: 100px 20px 60px;
+  color: #fff;
+  text-align: center;
+}
+
+.about-hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.about-hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ------------------ Core About Section ------------------ */
+.about-core-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.about-core-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-block {
+  margin-bottom: 60px;
+}
+
+.about-heading {
+  font-size: 2rem;
+  color: #17498f;
   margin-bottom: 20px;
+  text-align: center;
 }
-
-.view-toggle {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
+.about-paragraph {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
 }
+/* ------------------ Responsive ------------------ */
+@media (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2.2rem;
+  }
 
-.view-toggle button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  background-color: #f0f0f0;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
 }
-
-.view-toggle .view-active,
-.view-toggle button:hover {
-  background-color:  #17498f;
-  color: white;
-}
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 25px;
-  align-items: center;
-}
-
-.filters input[type="text"],
-.filters select {
-  padding: 10px 14px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  min-width: 200px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.filters input[type="text"]:focus,
-.filters select:focus {
-  border-color: #17498f;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
-  outline: none;
-}
-
-  /* Resume */
+ /*end of about*/
+   /* Resume */
 /* General Reset & Fonts */
 
 .resume-container {

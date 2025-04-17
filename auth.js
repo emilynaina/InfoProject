@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener ('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     const authWrapper = document.querySelector('.wrapper');
@@ -132,3 +132,4 @@ function showRegisterForm() {
     loginForm.style.display = 'none';
     registerForm.style.display = 'block';
 }
+});
