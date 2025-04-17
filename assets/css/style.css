@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #022243;
+    --accent-color: #ff4757;
+    --text-light: #F4F4F4;
+    --background-blur: blur(20px);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s, background 0.3s;
+}
+ 
+body {
+     display:flex;
+    padding-left: 15px;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #072152, #516a94);
+    background-size: cover;
+    background-position:center ;
+}
+
+.welcome-message{
+    color: #ffffff;
+}
+
+/* .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    height: 100%;
+    padding-right: 30px;
+  } */
+  
+  .hero-image {
+    position: fixed;
+    bottom: 0;
+    right: 20px;             /* Distance from the right edge */
+    max-height: 90vh;        /* Fit within screen height */
+    width: auto;
+    z-index: 10;             /* Ensure it's above background elements */
+    pointer-events: none;    /* Let clicks pass through, optional */
+  }
+  
+  .hero-image img {
+    max-height: 90vh;      /* Keeps the image within the screen */
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  
+.hero-text {
+    max-width: 500px;
+    color: #ffffff;
+    padding-left: 10px;
+    margin-left: 0;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .hero-text h1 span {
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #dddddd;
+  }
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--text-light);
+    user-select: none;
+}
+
+.navigation {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navigation a {
+    color: var(--text-light);
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+.wrapper {
+    position: fixed; /* Changed from relative to fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Initial centered position */
+    width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: var(--background-blur);
+    padding: 2rem;
+    z-index: 1000; /* Ensure it's above other elements */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.wrapper.active-popup {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add overlay for better visibility */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+body.auth-active::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Form Element Adjustments */
+.form-box {
+    width: 100%;
+    padding: 20px;
+}
+
+.input-box {
+    margin: 25px 0;
+    position: relative;
+}
+
+.password-guidelines {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 5px;
+    white-space: pre-line;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+/* Close Icon Positioning */
+.icon-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 6rem auto 2rem;
+}
+
+.dashboard-header{
+    color: white;
+}
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.job-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+/* Interactive Elements */
+.favorite-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.favorite-btn.favorited {
+    background: var(--accent-color);
+}
+
+/* Utilities */
+.error {
+    color: var(--accent-color);
+    padding: 1rem;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+/* Header Controls */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    backdrop-filter: var(--background-blur);
+    transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Gallery Layout */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.job-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.job-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+/* Job Metadata */
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.job-meta span {
+    background: rgba(2, 34, 67, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        gap: 1rem;
+    }
+
+    .wrapper {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .dashboard-container {
+        margin-top: 5rem;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+}
+
+
+/* About Us Section */
+.section {
+    padding: 80px 20px;
+  }
+  
+  .container {
+   
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #1f2937;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #4b5563;
+    margin-bottom: 30px;
+  }
+  
+  .content h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #111827;
+  }
+  
+  .content p {
+    font-size: 1.05rem;
+    margin-top: 10px;
+    color: #374151;
+  }
+  
+  .content ul {
+    margin-top: 15px;
+    padding-left: 20px;
+  }
+  
+  .content li {
+    margin-bottom: 10px;
+  }
+  
+  /* Team Callout Box */
+  .team-callout {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #e0f2fe;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .team-callout h2 {
+    color: #1d4ed8;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .btnLogin-popup {
+      margin-top: 10px;
+    }
+  
+    .container {
+      padding: 20px;
+    }
+  }
