@@ -1,110 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login & Registration</title>
-    <link rel="stylesheet" href="style.css">
+    <title>JobBoard - Find Your Internship</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
-
-<body>
-
+<body> 
+    <!-- Header -->
     <header>
-        <h2 class="logo">Logo</h2>
+        <h2 class="logo">InternSync</h2>
         <nav class="navigation">
-                <a href="#">Home</a>
-                <a href="pages\aboutus.html">About</a>
-                <a href="#">Service</a>
-                <a href="#">Contact</a>
-                <button class="btnLogin-popup">Login</button>
-        </nav>    
+            <a href="#" class="nav-link active">Home</a>
+            <a href="aboutus.html"> About Us</a>  
+            <button class="btnLogin-popup">Login</button>
+        </nav>
     </header>
+
+    <!-- Hero Section -->
+
     <div class="hero-image">
-        <img src="images\infocharacter2.png" alt="Intern Running Late">
+        <img src="assets/images/infocharacter2.png" alt="Intern Running Late">
       </div>
 
-      <div class="hero-text">
-        <h1>Welcome to our <span>website</span></h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-        <a href="#" class="cta-btn">Get Started →</a>
-      </div>
-      
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Find Your Dream Internship</h1>
+        <p>Connecting students and fresh grads with top companies across the globe. Search, apply, and kickstart your career today.</p>
+        <p>Login to get started!</p>
+    </section>
+
+    <!-- Auth Modal -->
     <div class="wrapper">
-        <span class= "icon-close">
+        <span class="icon-close">
             <ion-icon name="close-outline"></ion-icon>
         </span>
+
+        <!-- Login Form -->
         <div class="form-box login">
-            <h2>Login</h2>
-            <form action="#">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
                 <div class="input-box">
                     <span class="icon">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon>
                     </span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <input type="text" name="username" required>
+                    <label>Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">
-                    Remember me</label>
-                    <a href="#">Forgot Password?</a>
+                    <label>
+                        <input type="checkbox" name="remember">
+                        Remember me
+                    </label>
+                    <a href="#" class="text-link">Forgot Password?</a>
                 </div>
-                <button type= "submit" class = "btn">Login</button>
+                <button type="submit" class="btn">Sign In</button>
                 <div class="login-register">
-                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    <p>New here? <a href="#" class="register-link">Create Account</a></p>
                 </div>
-
             </form>
         </div>
 
+        <!-- Registration Form -->
         <div class="form-box register">
-            <h2>Registration</h2>
-            <form action="#">
+            <h2>Get Started</h2>
+            <form id="registerForm">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person-outline"></ion-icon>
                     </span>
-                    <input type="text" required>
+                    <input type="text" name="username" required>
                     <label>Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail-outline"></ion-icon>
                     </span>
-                    <input type="email" required>
+                    <input type="email" name="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">
-                    I agree to the terms & conditions</label>
-                  
+                <div class="terms-agreement">
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        I agree to the <a href="#" class="text-link">terms & conditions</a>
+                    </label>
                 </div>
-                <button type= "submit" class = "btn">Register</button>
+                <button type="submit" class="btn">Register</button>
                 <div class="login-register">
-                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    <p>Already have an account? <a href="#" class="login-link">Sign In</a></p>
                 </div>
-
             </form>
         </div>
     </div>
-        
-    <script src="script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="assets/js/auth.js"></script>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
 </body>
 </html>
