@@ -17,6 +17,8 @@
 }
  
 body {
+ 
+  padding-bottom: 20px;
      display:flex;
     padding-left: 15px;
     align-items: center;
@@ -75,6 +77,13 @@ body {
     font-weight: 700;
   }
   
+  .hero-text h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
   .hero-text p {
     font-size: 1.1rem;
     margin-bottom: 30px;
@@ -83,16 +92,18 @@ body {
 
 /* Header & Navigation */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: rgb(0, 0, 0);
+  color: white;
+  backdrop-filter: blur(10px); 
 }
 
 .logo {
@@ -193,6 +204,32 @@ body.auth-active::after {
 
 .btn {
     margin-top: 20px;
+}
+
+.tip{
+  color: white;
+}
+/*Loading screen dots*/
+.loading {
+  font-size: 32px;
+  font-weight: 600;
+  color: #210590;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.dots::after {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  animation: dots 1.2s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% { content: ''; }
+  33% { content: '.'; }
+  66% { content: '..'; }
+  100% { content: '...'; }
 }
 
 /* Close Icon Positioning */
@@ -387,29 +424,8 @@ body.auth-active::after {
     margin-top: 10px;
     color: #374151;
   }
+
   
-  .content ul {
-    margin-top: 15px;
-    padding-left: 20px;
-  }
-  
-  .content li {
-    margin-bottom: 10px;
-  }
-  
-  /* Team Callout Box */
-  .team-callout {
-    margin-top: 50px;
-    padding: 30px;
-    background-color: #e0f2fe;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .team-callout h2 {
-    color: #1d4ed8;
-    margin-bottom: 10px;
-  }
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -433,3 +449,271 @@ body.auth-active::after {
       padding: 20px;
     }
   }
+
+  /* About Section */
+  .about-section {
+   padding-top: 100px;
+   padding-bottom: 100px;
+    background-color: #fff;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; 
+  }
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  color: #17498f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: #17498f;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.view-toggle {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.view-toggle button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-toggle .view-active,
+.view-toggle button:hover {
+  background-color:  #17498f;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.filters input[type="text"],
+.filters select {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 200px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters input[type="text"]:focus,
+.filters select:focus {
+  border-color: #17498f;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+  /* Resume */
+/* General Reset & Fonts */
+
+.resume-container {
+  padding-top: 39px;
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Sidebar */
+.resume-sidebar {
+  background-color: #1e3555;
+  color: #fff;
+  width: 35%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.resume-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  margin: 0 auto;
+  display: block;
+}
+
+.resume-sidebar-heading {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ffffff33;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resume-contact p,
+.resume-education p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.resume-skills ul,
+.resume-languages ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.resume-skills li,
+.resume-languages li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* Main Section */
+.resume-main {
+  padding: 30px 40px;
+  width: 65%;
+  box-sizing: border-box;
+}
+
+.resume-header {
+  border-bottom: 2px solid #1e3555;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.resume-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.resume-lastname {
+  color: #1e3555;
+}
+
+.resume-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+  margin-top: 5px;
+}
+
+.resume-section-heading {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* Profile */
+.resume-profile p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Work Experience */
+.resume-job {
+  margin-bottom: 20px;
+}
+
+.resume-job-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.resume-job-role {
+  font-style: italic;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.resume-job-details {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.resume-job-details li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* References */
+.resume-references {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.resume-reference {
+  width: 45%;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+      flex-direction: column;
+  }
+
+  .resume-sidebar,
+  .resume-main {
+      width: 100%;
+  }
+
+  .resume-references {
+      flex-direction: column;
+  }
+
+  .resume-reference {
+      width: 100%;
+  }
+}
+.resume-tip {
+  font-size: 0.9rem;
+  color: #2a6f97;
+  background-color: #e0f0ff;
+  padding: 6px 10px;
+  margin-top: 8px;
+  border-left: 4px solid #0077b6;
+  border-radius: 4px;
+}

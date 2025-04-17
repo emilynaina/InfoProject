@@ -73,16 +73,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     function filterJobs() {
         const search = document.getElementById('search').value.toLowerCase();
         const location = document.getElementById('locationFilter').value;
-        const jobType = document.getElementById('jobTypeFilter').value;
+        //const jobType = document.getElementById('jobTypeFilter').value;
 
         return jobs.filter(job => {
             const matchesSearch = job.jobTitle.toLowerCase().includes(search) || 
                                job.companyName.toLowerCase().includes(search);
             const matchesLocation = location ? job.location === location : true;
-            const matchesType = jobType ? job.jobType === jobType : true;
+            //const matchesType = jobType ? job.jobType === jobType : true;
             const isFavorite = currentUser.favorites.some(f => f.id == job.id);
             
-            return matchesSearch && matchesLocation && matchesType && 
+            return matchesSearch && matchesLocation && //matchesType && 
                    (currentView === 'all' || isFavorite);
         });
     }
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function setupEventListeners() {
         document.getElementById('search').addEventListener('input', () => updateView());
         document.getElementById('locationFilter').addEventListener('change', () => updateView());
-        document.getElementById('jobTypeFilter').addEventListener('change', () => updateView());
+        //document.getElementById('jobTypeFilter').addEventListener('change', () => updateView());
         document.getElementById('logoutBtn').addEventListener('click', logout);
         document.getElementById('viewAll').addEventListener('click', () => {
             currentView = 'all';

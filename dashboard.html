@@ -14,6 +14,7 @@
             <div class="header-controls">
                 <a href="index.html">Home</a>
                 <a href="aboutus.html"> About Us</a>  
+                <a href="resume.html"> View Sample Resume</a>  
                 <span class="welcome-message">Welcome, <span id="username">User</span></span>
                 <div class="header-buttons">
                     <button id="logoutBtn" class="header-btn">Logout</button>
@@ -39,17 +40,19 @@
                 <option>San Francisco</option>
                 <option>Remote</option>
             </select>
-            <select id="jobTypeFilter">
+            <!-- <select id="jobTypeFilter">
                 <option value="">All Types</option>
                 <option>Full-time</option>
                 <option>Part-time</option>
                 <option>Contract</option>
-            </select>
+            </select>   -->
+            
         </div>
-
+        <p class="tip">💡 Tip: Click the ⭐ star icon to save an opportunity. Click the ❤️ heart icon to unsave it.</p>
         <div id="jobs-container" class="jobs-grid">
             <!-- Loading State -->
-            <div class="loading">Loading opportunities...</div>
+            <div class="loading">Loading opportunities<span class="dots"></span></div>
+
 
        
             <!-- Sample Job Card (will be populated by JavaScript)

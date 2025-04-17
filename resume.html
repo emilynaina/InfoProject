@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+    <header>
+      <h2 class="logo">InternSync</h2>
+      <nav class="navigation">
+        <div class="header-controls">
+          <a href="index.html">Home</a>
+          <a href="aboutus.html"> About Us</a>  
+          <a href="resume.html"> View Sample Resume</a>  
+          <span class="welcome-message">Welcome, <span id="username">User</span></span>
+          <div class="header-buttons">
+            <button id="logoutBtn" class="header-btn">Logout</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+  
+    <div class="resume-container">
+      <div class="resume-sidebar">
+        <div class="resume-photo">
+          <img src="assets/images/Portrait_Placeholder.png" alt="Profile Photo">
+        </div>
+  
+        <div class="resume-contact">
+          <h3 class="resume-sidebar-heading">Contact</h3>
+          <p><ion-icon name="call-outline"></ion-icon> +000-000-0000</p>
+          <p><ion-icon name="mail-outline"></ion-icon> email@example.com</p>
+          <p><ion-icon name="location-outline"></ion-icon> 123 Anywhere St., Any City</p>
+          <p><ion-icon name="globe-outline"></ion-icon> www.example.com</p>
+          <p class="resume-tip"><strong>Tip:</strong> Use a professional email address (avoid nicknames or old ones like coolkid123@...).</p>
+        </div>
+  
+        <div class="resume-education">
+          <h3 class="resume-sidebar-heading">Education</h3>
+          <p><strong>2030 - 2032</strong><br>Example University<br>Master of Business Admin</p>
+          <p><strong>2026 - 2030</strong><br>Example University<br>Bachelor of Business<br>GPA: 3.8 / 4.0</p>
+          <p class="resume-tip"><strong>Tip:</strong> List your most recent education first. Only include GPA if it's strong (e.g. 3.5+).</p>
+        </div>
+  
+        <div class="resume-skills">
+          <h3 class="resume-sidebar-heading">Skills</h3>
+          <ul>
+            <li>Project Management</li>
+            <li>Public Relations</li>
+            <li>Teamwork</li>
+            <li>Time Management</li>
+            <li>Leadership</li>
+            <li>Communication</li>
+          </ul>
+          <p class="resume-tip"><strong>Tip:</strong> Match your listed skills with what the job description is asking for.</p>
+        </div>
+  
+        <div class="resume-languages">
+          <h3 class="resume-sidebar-heading">Languages</h3>
+          <ul>
+            <li>English (Fluent)</li>
+            <li>French (Fluent)</li>
+            <li>German (Basic)</li>
+            <li>Spanish (Intermediate)</li>
+          </ul>
+          <p class="resume-tip"><strong>Tip:</strong> Even basic language skills show cultural flexibility. Include them!</p>
+        </div>
+      </div>
+  
+      <div class="resume-main">
+        <div class="resume-header">
+          <h1 class="resume-name">John <span class="resume-lastname">Doe</span></h1>
+          <h2 class="resume-title">Marketing Manager</h2>
+          <p class="resume-tip"><strong>Tip:</strong> Use your real name and the specific job title you're applying for.</p>
+        </div>
+  
+        <div class="resume-profile">
+          <h3 class="resume-section-heading">Profile</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut enim at enim pretium varius. 
+            Donec ut tellus diam. Curabitur vitae lorem ac dolor aliquet fermentum et non massa.
+          </p>
+          <p class="resume-tip"><strong>Tip:</strong> Write 2–3 sentences summarizing your experience, strengths, and goals.</p>
+        </div>
+  
+        <div class="resume-work-experience">
+          <h3 class="resume-section-heading">Work Experience</h3>
+  
+          <div class="resume-job">
+            <div class="resume-job-header">
+              <strong>Sample Studio</strong>
+              <span class="resume-job-dates">2032 - Present</span>
+            </div>
+            <div class="resume-job-role">Marketing Manager & Specialist</div>
+            <ul class="resume-job-details">
+              <li>Led and executed marketing strategies aligned with business goals.</li>
+              <li>Managed a high-performance marketing team in a collaborative environment.</li>
+              <li>Maintained brand consistency across all channels.</li>
+            </ul>
+          </div>
+  
+          <div class="resume-job">
+            <div class="resume-job-header">
+              <strong>Example Corp</strong>
+              <span class="resume-job-dates">2028 - 2032</span>
+            </div>
+            <div class="resume-job-role">Marketing Manager & Specialist</div>
+            <ul class="resume-job-details">
+              <li>Developed and optimized marketing budget for high ROI.</li>
+              <li>Analyzed market trends and customer behavior to craft strategies.</li>
+              <li>Maintained brand integrity in all public communications.</li>
+            </ul>
+          </div>
+  
+          <div class="resume-job">
+            <div class="resume-job-header">
+              <strong>Agency ABC</strong>
+              <span class="resume-job-dates">2026 - 2028</span>
+            </div>
+            <div class="resume-job-role">Marketing Coordinator</div>
+            <ul class="resume-job-details">
+              <li>Built strong agency-client relationships to support marketing objectives.</li>
+              <li>Monitored campaign success and adjusted strategies accordingly.</li>
+            </ul>
+          </div>
+          <p class="resume-tip"><strong>Tip:</strong> List your experiences in reverse chronological order. Start each bullet with an action verb.</p>
+        </div>
+  
+        <div class="resume-references">
+          <h3 class="resume-section-heading">References</h3>
+          <div class="resume-reference">
+            <p><strong>Jane Smith</strong><br>Example Inc. / CTO<br>Phone: +000-000-0000<br>Email: email@example.com</p>
+          </div>
+          <div class="resume-reference">
+            <p><strong>John Appleseed</strong><br>Example Inc. / CEO<br>Phone: +000-000-0000<br>Email: email@example.com</p>
+          </div>
+          <p class="resume-tip"><strong>Tip:</strong> You can list references or simply write “Available upon request.” Make sure your references are informed.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  
