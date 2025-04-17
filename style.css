@@ -8,10 +8,11 @@
 
 body{
     display:flex;
-    justify-content: center ;
+    /*justify-content: center ;*/
+    padding-left: 15px;
     align-items: center;
     min-height: 100vh;
-    background: url('3699903.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+    background: linear-gradient(to right, #072152, #516a94);
     background-size: cover;
     background-position:center ;
 }
@@ -21,7 +22,6 @@ header {
     left: 0;
     width: 100%;
     padding: 5px 100px; /* Adjust padding as needed */
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,6 +37,72 @@ header {
     user-select: none;
 }
 
+/* .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    height: 100%;
+    padding-right: 30px;
+  } */
+  
+  .hero-image {
+    position: fixed;
+    bottom: 0;
+    right: 20px;             /* Distance from the right edge */
+    max-height: 90vh;        /* Fit within screen height */
+    width: auto;
+    z-index: 10;             /* Ensure it's above background elements */
+    pointer-events: none;    /* Let clicks pass through, optional */
+  }
+  
+  .hero-image img {
+    max-height: 90vh;      /* Keeps the image within the screen */
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .home-text {
+    max-width: 500px;
+    color: #ffffff;
+    padding-left: 1px;
+    margin-left: 2px;
+  }
+  
+  .home-text h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .home-text h1 span {
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .home-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #dddddd;
+  }
+  
+  .cta-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ffffff;
+    color: #1e3c72;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -222,17 +288,17 @@ header {
 }
 
 .remember-forgot label input {
-    accent-color: #022243; /* Change the checkbox color to blue */
+    accent-color: #022243; 
     margin-right: 3px;
 }
 
 .remember-forgot a {
-    color: #F4F4F4; /* Change the link color to blue */
+    color: #F4F4F4; 
     text-decoration: none;
 }
 
 .remember-forgot a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;  
 }
 
 .btn {
