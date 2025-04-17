@@ -8,7 +8,8 @@
 
 body{
     display:flex;
-    justify-content: center ;
+    /*justify-content: center ;*/
+    padding-left: 15px;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(to right, #072152, #516a94);
@@ -62,26 +63,26 @@ header {
     display: block;
   }
   
-  .hero-text {
+  .home-text {
     max-width: 500px;
     color: #ffffff;
-    padding-left: 10px;
-    margin-left: 0;
+    padding-left: 1px;
+    margin-left: 2px;
   }
   
-  .hero-text h1 {
+  .home-text h1 {
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 20px;
     line-height: 1.2;
   }
   
-  .hero-text h1 span {
+  .home-text h1 span {
     color: #ffffff;
     font-weight: 700;
   }
   
-  .hero-text p {
+  .home-text p {
     font-size: 1.1rem;
     margin-bottom: 30px;
     color: #dddddd;
@@ -287,17 +288,17 @@ header {
 }
 
 .remember-forgot label input {
-    accent-color: #022243; /* Change the checkbox color to blue */
+    accent-color: #022243; 
     margin-right: 3px;
 }
 
 .remember-forgot a {
-    color: #F4F4F4; /* Change the link color to blue */
+    color: #F4F4F4; 
     text-decoration: none;
 }
 
 .remember-forgot a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;  
 }
 
 .btn {
