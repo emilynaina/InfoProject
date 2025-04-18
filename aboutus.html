@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | InternSync</title>
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -10,58 +9,88 @@
 </head>
 
 <body>
-  <!-- Keep Original Header -->
   <header>
     <h2 class="logo">InternSync</h2>
     <nav class="navigation">
-      <a href="index.html">Home</a>   
-      <a href="#" class="nav-link active">About Us</a>
-      <a href="dashboard.html">Internship Opportunities</a>
+        <div class="header-controls">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html"> About Us</a>   
+            <div class="header-buttons">
+                <button id="logoutBtn" class="header-btn">Logout</button>
+            </div>
+        </div>
     </nav>
-  </header>
+</header>
 
-  <!-- Hero Section -->
-  <section class="about-hero-section">
-    <div class="about-hero-container">
-      <h1 class="about-hero-title">About InternSync</h1>
-      <p class="about-hero-subtitle">
-        Empowering the next generation through meaningful internships and real-world opportunities.
-      </p>
-    </div>
-  </section>
-
-  <!-- Core About Section -->
-  <section class="about-core-section">
-    <div class="about-core-container">
-
-      <div class="about-block about-who-we-are">
-        <h2 class="about-heading">Who We Are</h2>
-        <p class="about-paragraph">
-          InternSync is a modern launchpad for students, grads, and career-changers seeking purpose-driven experience.
-          We’re not just a platform — we’re a pathway. Our goal is to bridge potential with opportunity, globally.
-        </p>
+  <main>
+    <section class="about-grid">
+      <div class="grid-pair">
+        <img src="assets/images/stressed.jpg" class="grid-img" alt="Stressed student" />
+        <div class="grid-block">
+          <h2>Internships Shouldn’t Be This Hard</h2>
+          <p>
+            Endless scrolling. Vague job descriptions. Application black holes. <strong>We've all been there  </strong>— 
+            feeling stuck in a loop of stress and confusion just trying to land a meaningful internship. 
+            Whether you're looking for experience in finance, tech, or creative fields, the process can 
+            feel like a full-time job with no guarantee of success.
+          </p>
+        </div>
       </div>
-
-      <div class="about-block about-what-we-do">
-        <h2 class="about-heading">What We Do</h2>
-        <p class="about-paragraph">
-          We partner with forward-thinking companies and organizations to offer internships that fuel your growth.
-          Our smart-match system helps align your interests, goals, and availability — from remote to in-office roles.
-        </p>
+    
+      <div class="grid-pair reverse">
+        <img src="assets/images/building-website.jpg" class="grid-img" alt="Team brainstorming" />
+        <div class="grid-block">
+          <h2>We Built InternSync to Change That</h2>
+          <p>
+            Our team collaborated to identify what <strong>YOU</strong> actually need — and built a solution 
+            around it. We listened to overwhelmed students, reviewed confusing job boards, and 
+            realized the problem wasn’t just the lack of internships, but the lack of direction.
+          InternSync was designed to take the frustration out of the internship hunt.
+            Our platform gives you the power to filter opportunities by what matters most.
+            A few clicks, and you're there — no stress, no mess.
+        </div>
       </div>
-
-      <div class="about-block about-our-vision">
-        <h2 class="about-heading">Our Vision</h2>
-        <p class="about-paragraph">
-          We envision a future where every learner, no matter where they are, can access opportunity.
-          At InternSync, we champion equity, inclusion, and career access as a universal right.
-        </p>
+    
+      <div class="grid-pair">
+        <img src="assets/images/match-to-job.jpg" class="grid-img" alt="Happy intern" />
+        <div class="grid-block">
+          <h2>Powerful Tools, Real Results</h2>
+          <p>
+            Our intuitive dashboard is more than a list of jobs. You can toggle between 
+            <strong>All Jobs</strong> and <strong>Favorites</strong>, search specific titles, 
+            and instantly see key info like   <strong>location, pay, </strong>and <strong>duration!</strong>
+            No more mystery. No more spam. Just opportunities that match your goals.
+          </p>
+        </div>
       </div>
+    
+      <div class="grid-pair reverse">
+        <img src="assets/images/team.jpg" class="grid-img" alt="Team smiling" />
+        <div class="grid-block">
+          <h2>Backed by a Community Who Gets It</h2>
+          <personalized>
+            InternSync isn’t just a platform — it’s a movement. Created by students, 
+            recruiters, and early-career mentors, we know firsthand how hard it is to break in. 
+            That’s why we’ve added   <strong>guides, resume support, </strong> and <strong>personalized matching</strong> 
+            to help you 
+            succeed at every stage. You’re not alone — and you’re not guessing anymore.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    
+    
 
-    </div>
-  </section>
+    <section class="full-width-cta">
+      <h2>Ready to Launch Your Career?</h2>
+      <p>Let InternSync help you find your next big opportunity. No stress. No confusion. 
+        Just you, thriving.</p>
+      <button onclick="location.href='dashboard.html'">Explore Internships</button>
+    </section>
+  </main>
 
 
-  <script src="assets/js/auth.js"></script>
 </body>
 </html>
+

@@ -5,7 +5,7 @@
 
 :root {
   --primary-color: #022243;
-  --accent-color: #ff4757;
+  --accent-color: #ffffff;
   --text-light: #F4F4F4;
   --background-blur: blur(20px);
 }
@@ -33,6 +33,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #1e293b;
   line-height: 1.7;
+  width: 100%;
 }
 
 /* -----------------------------------
@@ -94,6 +95,31 @@ header {
 .navigation a:hover::after {
   width: 100%;
 }
+/* -----------------------------------
+ login button
+----------------------------------- */
+.btnLogin-popup {
+  padding: 10px 20px;
+  background-color: #4e73df; /* Soft blue, feel free to change */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnLogin-popup:hover {
+  background-color: #3b5fc1;
+  transform: translateY(-2px);
+}
+
+.btnLogin-popup:active {
+  transform: translateY(0);
+  background-color: #3451a3;
+}
 
 /* -----------------------------------
    Hero Section
@@ -116,37 +142,39 @@ header {
 }
 
 .hero-text {
-  max-width: 500px;
+  max-width: 600px;
   color: #ffffff;
-  padding-left: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4); /* translucent background */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
   line-height: 1.2;
+  color: #ffffff;
 }
 
 .hero-text h1 span {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.hero-text h2,
-.hero-text p {
-  margin-bottom: 20px;
-  line-height: 1.2;
+  color: #4e73df; /* Accent color for emphasis */
+  font-weight: 800;
 }
 
 .hero-text h2 {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #f0f0f0;
 }
 
 .hero-text p {
-  font-size: 1.1rem;
-  color: #dddddd;
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 /* -----------------------------------
@@ -298,16 +326,20 @@ body.auth-active::after {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  box-sizing: border-box;  /* Add this line */
 }
 
 .job-card-back {
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
   overflow-y: auto;
+  padding: 10px;                   /* Uniform 10px padding */
+  box-sizing: border-box;
+  gap: 0.5rem;                     /* Optional: space between elements */
 }
+
 
 .detail-btn,
 .back-btn,
@@ -473,7 +505,7 @@ body.auth-active::after {
     flex-direction: column;
   }
 }
-/* About */
+
 .hero {
  
   color: #ffffff;
@@ -494,76 +526,126 @@ body.auth-active::after {
   margin: auto;
   opacity: 0.9;
 }
-/* ------------------ Hero Section ------------------ */
-.about-hero-section {
-  background: linear-gradient(135deg, #17498f, #1e3a8a);
-  padding: 100px 20px 60px;
-  color: #fff;
-  text-align: center;
+/* About */
+/* Grid wrapper */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 5vw; /* Equal padding on both sides using viewport units */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.about-hero-container {
-  max-width: 1000px;
-  margin: 0 auto;
+/* Each row */
+.grid-pair {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
 }
 
-.about-hero-title {
-  font-size: 3rem;
+/* Alternate layout for every other row */
+.grid-pair.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Equal size and square boxes */
+.grid-img,
+.grid-block {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  max-width: 600px;
+}
+
+/* Image style */
+.grid-img {
+  object-fit: cover;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text box style */
+.grid-block {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Text styling */
+.grid-block h2 {
+  font-size: 2.6rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
   font-weight: 700;
-  margin-bottom: 15px;
 }
 
-.about-hero-subtitle {
-  font-size: 1.25rem;
-  max-width: 700px;
-  margin: 0 auto;
-  opacity: 0.9;
+.grid-block p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 200%;
 }
 
-/* ------------------ Core About Section ------------------ */
-.about-core-section {
-  padding: 80px 20px;
-  background-color: #ffffff;
+/* CTA Section */
+.full-width-cta {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 4rem 5vw; /* Match padding with .about-grid */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.about-core-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-block {
-  margin-bottom: 60px;
-}
-
-.about-heading {
+.full-width-cta h2 {
   font-size: 2rem;
-  color: #17498f;
-  margin-bottom: 20px;
-  text-align: center;
+  margin-bottom: 1rem;
 }
-.about-paragraph {
+
+.full-width-cta p {
   font-size: 1.1rem;
-  color: #475569;
-  line-height: 1.8;
-  max-width: 850px;
-  margin: 0 auto;
-  text-align: center;
+  margin-bottom: 2rem;
 }
-/* ------------------ Responsive ------------------ */
+
+.full-width-cta button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background: white;
+  color: #1e3a8a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.full-width-cta button:hover {
+  background: #e0e7ff;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .about-hero-title {
-    font-size: 2.2rem;
+  .grid-pair,
+  .grid-pair.reverse {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .about-heading {
-    font-size: 1.5rem;
-  }
-
-  .about-paragraph {
-    font-size: 1rem;
+  .grid-img,
+  .grid-block {
+    max-width: 90vw;
+    width: 100%;
+    aspect-ratio: 1 / 1;
   }
 }
- /*end of about*/
+
    /* Resume */
 /* General Reset & Fonts */
 
@@ -739,3 +821,4 @@ body.auth-active::after {
   border-left: 4px solid #0077b6;
   border-radius: 4px;
 }
+ /*end of resume*/
