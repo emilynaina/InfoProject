@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         jobs = data.internshipJobsDataCsv;
 
         populateLocations();
+        populateLocations();
+populateJobTypesAndCategories();
+
         setupEventListeners();
         updateView();
         hideLoading();
@@ -96,17 +99,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     function filterJobs() {
         const search = document.getElementById('search').value.toLowerCase();
         const location = document.getElementById('locationFilter').value;
-
+        const jobType = document.getElementById('jobTypeFilter').value;
+        const category = document.getElementById('categoryFilter').value;
+    
         return jobs.filter(job => {
             const matchesSearch = job.jobTitle.toLowerCase().includes(search) || 
                                   job.companyName.toLowerCase().includes(search);
             const matchesLocation = location ? job.location === location : true;
+            const matchesType = jobType ? job.jobType === jobType : true;
+            const matchesCategory = category ? job.jobCategory === category : true;
             const isFavorite = currentUser.favorites?.some(f => f.id == job.id);
-
-            return matchesSearch && matchesLocation && 
+    
+            return matchesSearch && matchesLocation && matchesType && matchesCategory &&
                    (currentView === 'all' || isFavorite);
         });
     }
+    
 
     function populateLocations() {
         const locations = [...new Set(jobs.map(job => job.location))];
@@ -116,10 +124,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             ${locations.map(loc => `<option>${loc}</option>`).join('')}
         `;
     }
-
+    function populateJobTypesAndCategories() {
+        const jobTypes = [...new Set(jobs.map(job => job.jobType))];
+        const categories = [...new Set(jobs.map(job => job.jobCategory))];
+    
+        const jobTypeSelect = document.getElementById('jobTypeFilter');
+        const categorySelect = document.getElementById('categoryFilter');
+    
+        jobTypeSelect.innerHTML = `<option value="">All Job Types</option>` +
+            jobTypes.map(type => `<option value="${type}">${type}</option>`).join('');
+    
+        categorySelect.innerHTML = `<option value="">All Categories</option>` +
+            categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+    }
+    
     function setupEventListeners() {
         document.getElementById('search').addEventListener('input', () => updateView());
         document.getElementById('locationFilter').addEventListener('change', () => updateView());
+        document.getElementById('jobTypeFilter').addEventListener('change', () => updateView());
+        document.getElementById('categoryFilter').addEventListener('change', () => updateView());
         document.getElementById('logoutBtn').addEventListener('click', logout);
     
         document.getElementById('viewAll').addEventListener('click', () => {
