@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Quiz</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h2 class="logo">InternSync</h2>
+    <nav class="navigation">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="dashboard.html">Internship Opportunities</a>
+      <button class="btnLogin-popup">Login</button>
+    </nav>
+  </header>
+
+  <div class="quiz-container">
+    <h2 class="quiz-title">What Career Suits Your Lifestyle?</h2>
+    <form id="quizForm">
+      <div class="quiz-question">
+        <p>1. What suits your lifestyle best?</p>
+        <label><input type="radio" name="lifestyle" value="remote"> I love traveling </label><br>
+        <label><input type="radio" name="lifestyle" value="hybrid"> I’m mostly at home </label><br>
+        <label><input type="radio" name="lifestyle" value="onsite"> I love face-to-face </label>
+      </div>
+
+      <div class="quiz-question">
+        <p>2. How do you prefer working?</p>
+        <label><input type="radio" name="workStyle" value="helping"> Helping people directly</label><br>
+        <label><input type="radio" name="workStyle" value="organizing"> Organizing documents & tasks</label><br>
+        <label><input type="radio" name="workStyle" value="problemsolving"> Solving problems logically</label><br>
+        <label><input type="radio" name="workStyle" value="creative"> Coming up with creative ideas</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>3. What environment do you enjoy?</p>
+        <label><input type="radio" name="environment" value="calm"> Calm and steady</label><br>
+        <label><input type="radio" name="environment" value="fast"> Fast-paced and social</label><br>
+        <label><input type="radio" name="environment" value="variety"> Project-based and varied</label>
+      </div>
+
+      <div class="quiz-question">
+        <p>4. How do you feel about tech?</p>
+        <label><input type="radio" name="tech" value="love"> I love using and learning tools</label><br>
+        <label><input type="radio" name="tech" value="ok"> I'm okay with basic tools</label><br>
+        <label><input type="radio" name="tech" value="avoid"> I avoid it when I can</label>
+      </div>
+
+      <button type="submit" class="quiz-submit-btn">See My Career Match</button>
+    </form>
+
+    <div id="quizResult" class="quiz-result"></div>
+  </div>
+
+  <script src="assets/js/quiz.js"></script>
+
+</body>
+</html>

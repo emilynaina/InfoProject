@@ -177,4 +177,6 @@ populateJobTypesAndCategories();
             loadingOverlay.classList.remove('active');
         }
     }
-});
+
+    });
+     
