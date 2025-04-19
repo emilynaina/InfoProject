@@ -54,11 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
   
         resultDiv.innerHTML = `
-          <h3 >🎯 Your Ideal Job Type: <span>${jobType}</span></h3>
-          <p>Top 3 Career Categories for You:</p>
-          <ul>${categories.map(c => `<li>${c}</li>`).join('')}</ul>
-          <h4>Login to access or return to our Internship Opportunties page where you can select these filters to find your ideal job!</h4>
-        `;
+        <h3>🎯 Your Ideal Job Type: <span>${jobType}</span></h3>
+        <p>Top 3 Career Categories for You:</p>
+        <ul>${categories.map(c => `<li>${c}</li>`).join('')}</ul>
+        <div class="quiz-link">
+          <h3>🚀 Ready to explore internships? Use these filters to find your dream job!</h3>
+          <a href="dashboard.html" id="opportunitiesLink"> Internship Opportunities</a>
+        </div>
+      `;
+      
+      // Optionally load additional script for the dashboard page
+      const script = document.createElement('script');
+      script.src = 'assets/js/script.js';
+      document.body.appendChild(script);
+      
       });
     }
   });

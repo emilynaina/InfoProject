@@ -1,132 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="html-index">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobBoard - Find Your Internship</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/loading.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobBoard - Find Your Internship</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
-<body> 
-    <!-- Header -->
-    <header>
-        <h2 class="logo">InternSync</h2>
-        <nav class="navigation">
-            <a href="#" class="nav-link active">Home</a>
-            <a href="aboutus.html"> About Us</a>  
-            <a href="dashboard.html">Internship Opportunities</a>
-            <button class="btnLogin-popup">Login</button>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-
-    <div class="hero-image">
-        <img src="assets/images/infocharacter2.png" alt="Intern Running Late">
-      </div>
-
-    <section class="hero">
-        <div class="hero-text">
-        <h1>We Sweat the Details So You Don’t Have To</h1>
-        <h2>Syncing students and fresh grads with top internship opportunities at leading companies around the globe.</h2>
-        <p>Sprint Less, Score More – InternSync Has You Covered! Login to view InternSyns's Internship Opportunities as well 
-            get access to our exclusive resources and tools to help you land your dream internship!</p> 
+<body>
+  <!-- Header -->
+  <header>
+    <h2 class="logo">InternSync</h2>
+    <nav class="navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="dashboard.html">Internship Opportunities</a>
+   
+      <div class="header-buttons" id="logoutWrapper">
+          <button id="logoutBtn" class="header-btn">Logout</button>
         </div>
-        
-  <aside class="quiz-card">
-    <p class="quiz-card-title">
-      Not sure where to start? Take our <strong>personality × career</strong> quiz to find your perfect internship!
-    </p>
-    <a href="quiz.html">
-      <button class="quiz-nav-button">Take the Quiz</button>
-    </a>
-  </aside>
-</section>
-    </section>
-    
-    <!-- Auth Modal -->
-    <div class="wrapper">
-        <span class="icon-close">
-            <ion-icon name="close-outline"></ion-icon>
-        </span>
-
-        <!-- Login Form -->
-        <div class="form-box login">
-            <h2>Welcome Back</h2>
-            <form id="loginForm">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </span>
-                    <input type="text" name="username" required>
-                    <label>Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                    </span>
-                    <input type="password" name="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="remember-forgot">
-                    <label>
-                        <input type="checkbox" name="remember">
-                        Remember me
-                    </label>
-                    <a href="#" class="text-link">Forgot Password?</a>
-                </div>
-                <button type="submit" class="btn">Sign In</button>
-                <div class="login-register">
-                    <p>New here? <a href="#" class="register-link">Create Account</a></p>
-                </div>
-            </form>
+        <div id="loginWrapper">
+          <button onclick="location.href='login.html'" class="btnLogin-popup">Login</button>
         </div>
+    </nav>
+  </header>
 
-        <!-- Registration Form -->
-        <div class="form-box register" style="display: none;">
-            <h2>Get Started</h2>
-            <form id="registerForm">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </span>
-                    <input type="text" name="username" required>
-                    <label>Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail-outline"></ion-icon>
-                    </span>
-                    <input type="email" name="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                    </span>
-                    <input type="password" name="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="terms-agreement">
-                    <label>
-                        <input type="checkbox" name="terms" required>
-                        I agree to the <a href="#" class="text-link">terms & conditions</a>
-                    </label>
-                </div>
-                <button type="submit" class="btn">Register</button>
-                <div class="login-register">
-                    <p>Already have an account? <a href="#" class="login-link">Sign In</a></p>
-                </div>
-            </form>
-        </div>
+  <!-- Hero Section -->
+  <div class="hero-image">
+    <img src="assets/images/infocharacter2.png" alt="Intern Running Late">
+  </div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>We Sweat the Details So You Don’t Have To</h1>
+      <h2>Syncing students and fresh grads with top internship opportunities at leading companies around the globe.</h2>
+      <h3>Sprint Less, Score More – InternSync Has You Covered! . 
+        View internship opportunities and gain access to our exclusive resources and tools to help you land your dream internship!</h3>
+       <p> Login to have a personalized experience with InternSync</p>
+     
+  <a href="dashboard.html" class="internship-btn">View Our Internship Opportunities</a>
     </div>
 
-    <script src="assets/js/auth.js"></script>
+    <aside class="quiz-card">
+      <p class="quiz-card-title">
+        Not sure where to start? Take our <strong>personality × career</strong> quiz to find your perfect internship!
+      </p>
+      <a href="quiz.html">
+        <button class="quiz-nav-button">Take the Quiz</button>
+      </a>
+    </aside>
+  </section>
+  <div id="loginPopup" class="popup-overlay hidden">
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner"></div>
-    </div>
+  </div>
+ 
+  
+<!-- JS Auth Script -->
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
