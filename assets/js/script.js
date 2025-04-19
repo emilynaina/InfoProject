@@ -18,14 +18,6 @@ if (loginWrapper) {
   loginWrapper.style.display = currentUser ? 'none' : 'block';
 }
 
-const viewButtons = document.querySelectorAll('.view-toggle button');
-
-viewButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    viewButtons.forEach(b => b.classList.remove('view-active'));
-    btn.classList.add('view-active');
-  });
-});
 
     try {
         showLoading();
