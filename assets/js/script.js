@@ -1,25 +1,42 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'index.html';
-        return;
-    }
-
     const container = document.getElementById('jobs-container');
     const usernameSpan = document.getElementById('username');
-    const API_URL = "https://api.sheety.co/ed5b787d81ffb37813f8cfcf95dcb2f1/internshipJobsDataNew/internshipJobsDataCsv";
+    const API_URL = "https://api.sheety.co/aba44f2e57673cf24694b6620f65d16e/internSync/sheet1";
 
     let jobs = [];
     let currentView = 'all';
+    if (currentUser && usernameSpan) {
+        usernameSpan.textContent = currentUser.username;
+    }
+    const logoutWrapper = document.getElementById('logoutWrapper');
+    if (logoutWrapper) {
+      logoutWrapper.style.display = currentUser ? 'block' : 'none';
+    }
+    const loginWrapper = document.getElementById('loginWrapper');
+if (loginWrapper) {
+  loginWrapper.style.display = currentUser ? 'none' : 'block';
+}
 
-    usernameSpan.textContent = currentUser.username;
+const viewButtons = document.querySelectorAll('.view-toggle button');
+
+viewButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    viewButtons.forEach(b => b.classList.remove('view-active'));
+    btn.classList.add('view-active');
+  });
+});
 
     try {
         showLoading();
         const response = await fetch(API_URL);
-        if (!response.ok) throw new Error('Failed to fetch jobs');
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Failed to fetch jobs: ${response.status} - ${errorText}`);
+          }
         const data = await response.json();
-        jobs = data.internshipJobsDataCsv;
+        jobs = data.sheet1;
+
 
         populateLocations();
         populateLocations();
@@ -44,10 +61,12 @@ populateJobTypesAndCategories();
                         <p>📍 ${job.location}</p>
                         <p>💰 ${job.salary}</p>
                         <p>⏳ ${job.duration}</p>
-                        <button class="favorite-btn ${currentUser.favorites?.some(f => f.id == job.id) ? 'favorited' : ''}" 
+                            <button 
+                                class="favorite-btn ${!currentUser ? 'disabled' : ''} ${currentUser?.favorites?.some(f => f.id == job.id) ? 'favorited' : ''}" 
                                 data-id="${job.id}">
-                            ${currentUser.favorites?.some(f => f.id == job.id) ? '❤️' : '☆'}
-                        </button>
+                                ${currentUser?.favorites?.some(f => f.id == job.id) ? '❤️' : '☆'}
+                            </button>
+
                         <button class="detail-btn">Details</button>
                     </div>
                     <div class="job-card-back">
@@ -58,7 +77,9 @@ populateJobTypesAndCategories();
                 </div>
             </div>
         `).join('');
-       
+       if (filtered.length === 0) {
+    container.innerHTML = '<div class="no-results">😢 No internships found matching your filters.</div>';
+}
         document.querySelectorAll('.favorite-btn').forEach(btn => {
             btn.addEventListener('click', e => {
                 e.stopPropagation();
@@ -80,22 +101,35 @@ populateJobTypesAndCategories();
             });
         });
     }
-
+ 
     function toggleFavorite(e) {
+        if (!Array.isArray(currentUser.favorites)) {
+            currentUser.favorites = [];
+        }
+    
         const jobId = e.target.dataset.id;
         const job = jobs.find(j => j.id == jobId);
         const index = currentUser.favorites.findIndex(f => f.id == jobId);
-
+    
         if (index === -1) {
             currentUser.favorites.push(job);
         } else {
             currentUser.favorites.splice(index, 1);
         }
-
+    
+        // 🔄 Save currentUser to localStorage
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+        // 🔄 Also update the saved user in jobBoardUsers
+        const users = JSON.parse(localStorage.getItem('jobBoardUsers')) || {};
+        if (users[currentUser.username]) {
+            users[currentUser.username].favorites = currentUser.favorites;
+            localStorage.setItem('jobBoardUsers', JSON.stringify(users));
+        }
+    
         updateView();
     }
-
+    
     function filterJobs() {
         const search = document.getElementById('search').value.toLowerCase();
         const location = document.getElementById('locationFilter').value;
@@ -108,7 +142,8 @@ populateJobTypesAndCategories();
             const matchesLocation = location ? job.location === location : true;
             const matchesType = jobType ? job.jobType === jobType : true;
             const matchesCategory = category ? job.jobCategory === category : true;
-            const isFavorite = currentUser.favorites?.some(f => f.id == job.id);
+            const isFavorite = currentUser?.favorites?.some(f => f.id == job.id) || false;
+
     
             return matchesSearch && matchesLocation && matchesType && matchesCategory &&
                    (currentView === 'all' || isFavorite);
@@ -177,6 +212,6 @@ populateJobTypesAndCategories();
             loadingOverlay.classList.remove('active');
         }
     }
-
+    
     });
      

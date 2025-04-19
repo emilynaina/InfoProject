@@ -16,9 +16,12 @@
                 <a href="aboutus.html"> About Us</a>  
                 <a href="resume.html"> View Sample Resume</a>  
                 <span class="welcome-message">Welcome, <span id="username">User</span></span>
-                <div class="header-buttons">
+                <div class="header-buttons" id="logoutWrapper">
                     <button id="logoutBtn" class="header-btn">Logout</button>
-                </div>
+                  </div>
+                  <div id="loginWrapper">
+                    <button onclick="location.href='login.html'" class="btnLogin-popup">Login</button>
+                  </div>
             </div>
         </nav>
     </header>
@@ -29,9 +32,8 @@
             <div class="view-toggle">
                 <button class="view-active" id="viewAll">All Jobs</button>
                 <button id="viewFavorites">My Favorites </button>
-                <a href="quiz.html">
-            <button class="quiz-nav-button">Take the Quiz</button>
-          </a>
+                <a href="quiz.html" class="quiz-nav-button">Take the Quiz</a>
+
             </div>
         </div>
         
@@ -61,7 +63,7 @@
 
 
        
-            <!-- Sample Job Card (will be populated by JavaScript)
+            <!-- Sample Job Card (will be populated by JavaScript) 
             <div class="job-card">
                 <h3 class="card-title">Software Engineering Intern</h3>
                 <div class="job-meta">
@@ -86,11 +88,11 @@
                 <button class="details-btn" > Details </button>
                 <button class="detail-btn">Details</button>
 
-            </div>
+            </div>-->
         </div>
     </div>
-        -->
-
+       
+    
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
