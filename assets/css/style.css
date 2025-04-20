@@ -435,8 +435,7 @@ body.auth-active::after {
 
 
 .detail-btn,
-.back-btn,
-.favorite-btn {
+.back-btn{
   background: var(--primary-color);
   color: white;
   border: none;
@@ -446,6 +445,18 @@ body.auth-active::after {
   font-size: 0.85rem;
   margin-top: 0.5rem;
   width: 200px;
+}
+
+.favorite-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  width: 40px;
 }
 
 .favorite-btn.favorited {
