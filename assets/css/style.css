@@ -57,7 +57,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 99;
-  background: rgb(0, 0, 0);
+  background: rgb(20, 23, 51);
   color: white;
   backdrop-filter: blur(10px);
 }
@@ -396,7 +396,7 @@ body.auth-active::after {
 
 .job-card-flip {
   width: 300px;
-  height: 220px;
+  height: 270px;
   perspective: 1000px;
   margin: 1rem;
 }
@@ -445,6 +445,7 @@ body.auth-active::after {
   cursor: pointer;
   font-size: 0.85rem;
   margin-top: 0.5rem;
+  width: 200px;
 }
 
 .favorite-btn.favorited {
@@ -1504,6 +1505,7 @@ body.auth-active::after {
   opacity: 1;
   cursor: not-allowed;
   position: relative;
+  width: 40px;
 }
 
 .favorite-btn.disabled::after {
@@ -1521,13 +1523,14 @@ body.auth-active::after {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 100;
+  z-index: 9999;;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* slight shadow */
 }
 
 .favorite-btn.disabled:hover::after {
   opacity: 1;
 }
+
 /* contact us page */
 .contact-section {
   padding: 6rem 1rem 3rem;
@@ -1584,7 +1587,6 @@ body.auth-active::after {
   font-weight: 600;
   display: none;
 }
-
 /* Contact us Popup Styles */
 .popup-overlay {
   position: fixed;
@@ -1617,4 +1619,3 @@ body.auth-active::after {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* END contact us page */
