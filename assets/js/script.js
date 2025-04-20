@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const container = document.getElementById('jobs-container');
     const usernameSpan = document.getElementById('username');
-    const API_URL = "https://api.sheety.co/aba44f2e57673cf24694b6620f65d16e/internSync/sheet1";
+    const API_URL = "https://api.sheety.co/acc655ed0af26f3aba73d55f1b5563f2/internshipJobsData/sheet1";
 
     let jobs = [];
     let currentView = 'all';
