@@ -57,11 +57,13 @@ viewButtons.forEach(btn => {
                 <div class="job-card-inner">
                     <div class="job-card-front">
                         <h3 class="job-title">${job.jobTitle}</h3>
+                        <div class="job-card-info">
                         <p><strong>${job.companyName}</strong></p>
                         <p>📍 ${job.location}</p>
                         <p>💰 ${job.salary}</p>
                         <p>⏳ ${job.duration}</p>
                         ${job.email ? `<p>📧 ${job.email}</p>` : ''} <!-- Plain text email (no link) -->
+                        </div>
                         <button 
                             class="favorite-btn ${!currentUser ? 'disabled' : ''} ${currentUser?.favorites?.some(f => f.id == job.id) ? 'favorited' : ''}" 
                             data-id="${job.id}">
@@ -70,13 +72,13 @@ viewButtons.forEach(btn => {
                         <button class="detail-btn">Details</button>
                     </div>
                     <div class="job-card-back">
-                        <h4>Details</h4>
-                        <p>${job.description}</p>
+                       <h4 class="job-details-title">Details</h4>
+                        <p class="job-details-text">${job.description}</p>
                         <button class="back-btn">Show Less</button>
                     </div>
                 </div>
             </div>
-        `).join('');
+        `).join(''); 
         
         if (filtered.length === 0) {
             container.innerHTML = '<div class="no-results">😢 No internships found matching your filters.</div>';
