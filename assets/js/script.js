@@ -15,18 +15,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         logoutWrapper.style.display = currentUser ? 'block' : 'none';
     }
 
-    const loginWrapper = document.getElementById('loginWrapper');
-    if (loginWrapper) {
-        loginWrapper.style.display = currentUser ? 'none' : 'block';
-    }
+const loginWrapper = document.getElementById('loginWrapper');
+if (loginWrapper) {
+  loginWrapper.style.display = currentUser ? 'none' : 'block';
+}
 
-    const viewButtons = document.querySelectorAll('.view-toggle button');
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            viewButtons.forEach(b => b.classList.remove('view-active'));
-            btn.classList.add('view-active');
-        });
-    });
+const viewButtons = document.querySelectorAll('.view-toggle button');
+viewButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    viewButtons.forEach(btn => btn.classList.remove('view-active'));
+    btn.classList.add('view-active');
+  });
+});
 
     try {
         showLoading();
