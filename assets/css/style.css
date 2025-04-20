@@ -1260,7 +1260,7 @@ body.auth-active::after {
 .form-box.register {
   flex: 1;
   max-width: 400px;
-  background-color: #ffffff;
+  background-color: #f5ebeb;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
