@@ -352,11 +352,14 @@ body.auth-active::after {
    Job Cards & Flip
 ----------------------------------- */
 .job-title {
-  font-size: 1rem;
-  white-space: nowrap;      /* prevents line breaks */
-  overflow: hidden;         /* hides anything that overflows the container */
-  text-overflow: ellipsis;  /* adds "..." if text overflows */
+  font-size: 1.3rem;
+  white-space: normal;      /* allow line breaks */
+  overflow-wrap: break-word; /* break long words if needed */
+  min-height: 2.6rem;        /* force space for 2 lines even if short */
+  line-height: 1.3rem;       /* matches the font size for clean spacing */
 }
+
+
 .job-card,
 .job-card-front,
 .job-card-back {
@@ -396,7 +399,7 @@ body.auth-active::after {
 
 .job-card-flip {
   width: 300px;
-  height: 270px;
+  height: 310px;
   perspective: 1000px;
   margin: 1rem;
 }
@@ -434,8 +437,7 @@ body.auth-active::after {
 }
 
 
-.detail-btn,
-.back-btn{
+.detail-btn{
   background: var(--primary-color);
   color: white;
   border: none;
@@ -443,9 +445,38 @@ body.auth-active::after {
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.85rem;
-  margin-top: 0.5rem;
+  margin-top: 1.6rem;
   width: 200px;
 }
+
+.job-details-title {
+  font-size: 1rem;
+}
+
+.job-details-text {
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 490px; 
+  overflow: hidden; /* prevents overflow */
+  white-space: normal; /* ensures text wraps properly */
+  word-wrap: break-word; /* breaks long words if needed */
+}
+
+.back-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  width: 200px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .favorite-btn {
   background: var(--primary-color);
@@ -547,6 +578,7 @@ body.auth-active::after {
 
 .no-results{
   color: white;
+  font-size: larger;
 }
 
 
@@ -1630,3 +1662,9 @@ body.auth-active::after {
   to { opacity: 1; transform: scale(1); }
 }
 
+
+.job-card-info{
+  display: flex;
+  flex-direction: column;
+  line-height: 2.1;
+}
