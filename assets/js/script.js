@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const usernameSpan = document.getElementById('username');
     const API_URL = "https://api.sheety.co/9d254c2e7c879c7527e8463018fe6ca8/copyOfInternshipJobsData/internshipJobsDataCsv";
 
+
     let jobs = [];
     let currentView = 'all';
     if (currentUser && usernameSpan) {
